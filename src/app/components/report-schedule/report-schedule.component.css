@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,600,800,900");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700");
+.container {
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  left: 10%;
+  margin: 0 4%;
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 90%;
+    margin: 5% 5%;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .container {
+    margin: 12% 5%;
+  }
+}
+
+.Headingcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 50px;
+}
+
+@media screen and (max-width: 992px) {
+  .Headingcontainer {
+    position: relative;
+    width: 90%;
+    margin: 0 5%;
+  }
+}
+
+.Headingcontainer h1 {
+  position: absolute;
+  left: 0;
+  color: #FF1D58;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 15px;
+  font-size: 28px;
+}
+
+@media screen and (max-width: 479px) {
+  .Headingcontainer h1 {
+    font-size: 20px;
+  }
+}
+
+form {
+  position: absolute;
+  height: 640px;
+  width: 100%;
+  top: 55px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+form input {
+  display: block;
+  text-indent: 5%;
+}
+
+form input:focus {
+  outline: none;
+}
+
+form input::-webkit-input-placeholder {
+  color: #7C8192;
+}
+
+form input:-ms-input-placeholder {
+  color: #7C8192;
+}
+
+form input::-ms-input-placeholder {
+  color: #7C8192;
+}
+
+form input::placeholder {
+  color: #7C8192;
+}
+
+form .email {
+  height: 40px;
+  width: 80%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  background-repeat: no-repeat;
+  background-position: right 1em top 50%, 0 0;
+  background-size: 1em auto, 100%;
+}
+
+@media screen and (max-width: 479px) {
+  form .email {
+    position: absolute;
+    top: 100px;
+    width: 95%;
+  }
+}
+
+form .Scheduledate {
+  width: 30%;
+  height: 40px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  position: absolute;
+  left: 10%;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  color: #7C8192;
+  text-indent: 10%;
+}
+
+@media screen and (max-width: 479px) {
+  form .Scheduledate {
+    width: 95%;
+    left: 0;
+    top: 200px;
+    margin: 0 2.5%;
+  }
+}
+
+form .Scheduletime {
+  position: absolute;
+  width: 30%;
+  height: 40px;
+  right: 10%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  color: #7C8192;
+  text-indent: 10%;
+}
+
+@media screen and (max-width: 479px) {
+  form .Scheduletime {
+    width: 95%;
+    left: 0;
+    top: 300px;
+    margin: 0 2.5%;
+  }
+}
+
+form .ScheduleSelect {
+  position: absolute;
+  top: 500px;
+  height: 40px;
+  width: 80%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  background-repeat: no-repeat;
+  background-position: right 1em top 50%, 0 0;
+  background-size: 1.2em auto, 100%;
+}
+
+@media screen and (max-width: 479px) {
+  form .ScheduleSelect {
+    width: 95%;
+    left: 0;
+    top: 440px;
+    margin: 0 2.5%;
+  }
+}
+
+form .submitForm {
+  width: 120px;
+  height: 40px;
+  background: #FF1D58;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 479px) {
+  form .submitForm {
+    position: absolute;
+    top: 450px;
+  }
+}
+
+form .submitForm:hover {
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+}
+
+form input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  position: absolute;
+  right: 2%;
+  height: 13px;
+  width: 13px;
+}
+
+form input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  position: absolute;
+  right: 2%;
+  height: 13px;
+  width: 13px;
+}
+/*# sourceMappingURL=report-schedule.component.css.map */

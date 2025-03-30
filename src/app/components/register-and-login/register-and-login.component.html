@@ -1,0 +1,70 @@
+<div class = "container">
+
+    <div class = "buttons">
+        <button onClick="this.toggleRegister" class = "two" (click) = "showRegister()">Register</button>
+        <button onClick="this.toggleLogin" class = "one" (click) = "showLogin()" >Login</button>
+       
+    </div>
+
+    <div class = "loginCon" *ngIf = "showL">
+        <h1 *ngIf = "errorMessageActivated" class = "errorMessage">{{LoginMessage}}</h1>
+        <form [formGroup] = "loginForm" (ngSubmit) = "onSubmitlogin()" *ngIf = "!forgotPass">
+            <input type="text" placeholder = "Username"  class = "username1" autoComplete = "username"  [formControlName] = "'usernamelogin'" name = "username"/>
+            <input type="password" placeholder = "Password" class = "pass1" autoComplete = "new-password"  [formControlName] = "'passwordlogin'" name="password"/>
+            <input type = "submit" class="loginbtn"/>
+            
+        </form>
+
+        <form [formGroup] = "forgotPassForm" (ngSubmit) = "updatePassword()" class = "forgotForm" *ngIf = "forgotPass" >
+            <h4 class = "errorMessage" *ngIf = "forgotErrorActivated">{{errorInForgotPass}}</h4>
+            <input type="text" placeholder="Enter registered email" [formControlName] = "'forgotEmail'">
+            <input type = "password" placeholder="New password" [formControlName] = "'Newpassword'">
+            <input type = "password" placeholder="Confirm password" [formControlName] = "'NewCpassword'">
+            <input type="submit" value = "update" class = "forgotbtn">
+        </form>
+        <a (click) = "forgotPassword()" *ngIf = "!forgotPass"><h3>Forgot Password ?</h3></a>
+        <h4 *ngIf = "!forgotPass">OR</h4>
+        <button (click) = "googleLogin()" class = "googleBtn" *ngIf = "!forgotPass">Login with Gmail</button>
+
+    </div>
+    <div class = "registerCon" *ngIf = "showR">
+        <h1 *ngIf = "errorMessageActivated && showForm" class = "errorMessage">{{RegisterMessage}}</h1>
+        <form action="" [formGroup] = "registerForm" (ngSubmit) = "onSubmit()" *ngIf = "showForm">
+
+
+            
+            
+            <input type="text" placeholder = "Username" autoComplete = "username" [formControlName] = "'username'" class = "username" />
+            <input type="text" placeholder = "Email Id" [formControlName] = "'email'" autoComplete = "email" class = "email" />
+            <input type="password" placeholder = "Password" autoComplete = "new-password" [formControlName] = "'password'" class = "pass"/>
+            <input type="password" placeholder = "Confirm Password" autoComplete = "new-password" [formControlName] = "'confirmPassword'" class = "cpass"/>
+            <input type="submit" value="Register" class = "regbtn"/>
+        </form>
+
+        <form [formGroup] = "otpForm" *ngIf = "!showForm" class = "OTPform" (ngSubmit) = "OTPverification()">
+            <h4 style="color: red;" *ngIf = "otperror">{{OTPMessage}}</h4>
+            <input type="text" placeholder="Enter OTP sent to your mail" class = "otpCon" [formControlName] = "'OTPentered'">
+            <input type="submit" value="submit" class = "submitOTP" />
+            <a (click) = "backToReg()">wrong email?</a>
+        </form>
+
+
+        <!-- /* <GoogleLogin 
+        
+        clientId="712568026954-015befnnej0q3jfaed5pdn4qgg7f9nkl.apps.googleusercontent.com"
+        render="renderProps => (
+            <button onClick="renderProps.onClick" disabled="renderProps.disabled" class = "loginWithGmail"><img src="gmailIcon" alt=""/>Signup</button>
+        )"
+        buttonText="Login"
+        onSuccess="responseGoogle"
+        onFailure="responseGoogle"
+        cookiePolicy="'single_host_origin'"
+></GoogleLogin> */ -->
+    </div>
+
+    
+        
+
+    
+    
+</div>

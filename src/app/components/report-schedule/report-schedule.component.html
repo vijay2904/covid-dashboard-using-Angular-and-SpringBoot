@@ -1,0 +1,15 @@
+<div class = 'container'>            
+    <div class = "Headingcontainer">
+        <h1>Schedule Reports</h1>
+    </div>
+    <form [formGroup] = "scheduleMailForm" (ngSubmit) = "scheduleEmail()">
+
+        <h4 *ngIf = "errorActivated" style="color: red;position: absolute;top: 100px;">{{errorMessage}}</h4>
+        <h4 *ngIf = "successActivated" style="font-weight: 600;color: green;position: absolute;top: 100px;">Report has been scheduled</h4>
+
+        <input type="email" placeholder = "Enter email id" class = email required [(ngModel)] = "enteredEmail" formControlName = "enteredEmail"/>
+        <input type="date" name="" class = Scheduledate required [(ngModel)] = "date" formControlName = "date"/>
+        <input type="time" name="" class = Scheduletime required [(ngModel)] = "time" formControlName = "time" />
+        <input type="submit" class = submitForm value="Schedule"/>
+    </form>
+</div>

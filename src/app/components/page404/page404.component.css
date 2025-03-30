@@ -1,0 +1,57 @@
+.container {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 80%;
+    height: 100%;
+    left: 10%;
+    margin: 0 4%;
+    overflow: hidden;
+  }
+  
+ 
+
+  h1 {
+      font-size: 400px;
+      color: #FF1D58;
+  }
+  h2 {
+      font-size: 100px;
+      text-transform: uppercase;
+      color: #7C8192;
+  }
+
+  @media screen and (max-width: 992px) {
+    .container {
+      width: 90%;
+      left: 0;
+      margin: 0 5%;
+    }
+    h1 {
+        font-size: 100px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+  }
+  @media screen and (max-width: 479px) {
+    .container {
+      width: 90%;
+      left: 0;
+      margin: 0 5%;
+    }
+    h1 {
+        font-size: 50px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+  }

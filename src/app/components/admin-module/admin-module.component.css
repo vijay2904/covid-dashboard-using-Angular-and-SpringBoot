@@ -1,0 +1,234 @@
+.container {
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  left: 10%;
+  margin: 0 4%;
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 90%;
+    margin: 5% 5%;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .container {
+    margin: 20% 5%;
+  }
+}
+
+.container button:focus {
+  outline: none;
+}
+
+.Headingcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+          justify-content:space-evenly;
+  width: 100%;
+  height: 50px;
+}
+
+@media screen and (max-width: 992px) {
+  .Headingcontainer {
+    position: relative;
+    width: 90%;
+    margin: 0 5%;
+  }
+}
+
+.Headingcontainer h1 {
+  position: absolute;
+  left: 0;
+  color: #FF1D58;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 15px;
+  font-size: 28px;
+}
+
+@media screen and (max-width: 479px) {
+  .Headingcontainer h1 {
+    font-size: 20px;
+  }
+}
+
+.Headingcontainer button {
+  margin: 15px 0;
+  height: 40px;
+  width: 200px;
+  background: #FF1D58;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.Headingcontainer button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+form {
+  position: absolute;
+  height: 640px;
+  width: 100%;
+  top: 55px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+}
+
+form .latandlong {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+form h2 {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+form h4 {
+  height: 15px;
+  margin: 0;
+}
+
+form input {
+  display: block;
+  text-indent: 5%;
+  border: none;
+  background: #fff;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  height: 30px;
+  width: 200px;
+}
+
+form input:focus {
+  outline: none;
+}
+
+form input::-webkit-input-placeholder {
+  color: #7C8192;
+}
+
+form input:-ms-input-placeholder {
+  color: #7C8192;
+}
+
+form input::-ms-input-placeholder {
+  color: #7C8192;
+}
+
+form input::placeholder {
+  color: #7C8192;
+}
+
+form .input-con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+form .input-con span {
+  position: absolute;
+  margin: 0 40%;
+  font-weight: 600;
+}
+
+form .input-con input {
+  width: 30%;
+}
+
+form ng-select {
+  width: 80%;
+}
+
+form .select {
+  width: 80%;
+}
+
+form .submitBtn {
+  background: #FF1D58;
+  color: #fff;
+  font-weight: 600;
+  width: 150px;
+  height: 40px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+form .submitBtn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.form-container {
+  display: block;
+  width: 90%;
+  padding: 2em;
+  margin: 2em auto;
+  background: #fff;
+}
+
+.form-container .alert {
+  background: #f2edda;
+  padding: 7px;
+  font-size: .9em;
+  margin-bottom: 20px;
+  display: inline-block;
+  -webkit-animation: alertAnim 2sec forwards;
+          animation: alertAnim 2sec forwards;
+}
+
+.form-container .button {
+  margin-top: 3rem;
+}
+/*# sourceMappingURL=admin-module.component.css.map */

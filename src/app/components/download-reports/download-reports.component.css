@@ -1,0 +1,442 @@
+.container1 {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  left: 10%;
+  margin: 0 4%;
+}
+
+@media screen and (max-width: 992px) {
+  .container1 {
+    width: 90%;
+    left: 0;
+    margin: 5% 5%;
+  }
+}
+
+.Headingcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 50px;
+}
+
+@media screen and (max-width: 992px) {
+  .Headingcontainer {
+    position: relative;
+    width: 90%;
+    margin: 0 5%;
+  }
+}
+
+.Headingcontainer h1 {
+  position: absolute;
+  left: 0;
+  color: #FF1D58;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 15px;
+  font-size: 28px;
+}
+
+@media screen and (max-width: 479px) {
+  .Headingcontainer h1 {
+    font-size: 20px;
+  }
+}
+
+.downloadCon {
+  position: absolute;
+  height: 640px;
+  width: 100%;
+  top: 55px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.downloadCon .buttonsCon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 250px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  height: 100px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.downloadCon .buttonsCon button {
+  background: #FF1D58;
+  color: #fff;
+  width: 200px;
+  height: 40px;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin: 2% 0;
+}
+
+.downloadCon .buttonsCon button:focus {
+  outline: none;
+}
+
+.downloadCon .buttonsCon button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.downloadCon .downloadError {
+  position: absolute;
+  font-size: 20px;
+  color: red;
+  top: 50px;
+}
+
+.downloadCon .submitBtn {
+  background: #FF1D58;
+  color: #fff;
+  position: absolute;
+  width: 200px;
+  height: 40px;
+  top: 200px;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin: 10%;
+  cursor: pointer;
+}
+
+.downloadCon .submitBtn:focus {
+  outline: none;
+}
+
+.downloadCon .submitBtn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.downloadCon .stateLabel {
+  position: absolute;
+  top: 50px;
+  font-size: 18px;
+  margin: 10%;
+}
+
+.downloadCon .typeLabel {
+  position: absolute;
+  top: 150px;
+  font-size: 18px;
+  margin: 10%;
+}
+
+.downloadCon .dropdown {
+  position: absolute;
+  top: 100px;
+  border-radius: 5px;
+  height: 35px;
+  width: 40%;
+  cursor: pointer;
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 10%;
+}
+
+.downloadCon .dropdown:focus {
+  border: 2px solid #000;
+}
+
+.downloadCon .dropdown2 {
+  position: absolute;
+  top: 200px;
+  border-radius: 5px;
+  margin: 10%;
+  height: 35px;
+  width: 40%;
+  cursor: pointer;
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.downloadCon .dropdown2:focus {
+  border: 2px solid #000;
+}
+
+.downloadCon .list {
+  width: 90%;
+  height: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: -20px;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 992px) {
+  .downloadCon .list {
+    left: 0;
+  }
+}
+
+.downloadCon .list ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 80%;
+  margin: 35px 0;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 479px) {
+  .downloadCon .list ul {
+    width: 90%;
+  }
+}
+
+.downloadCon .list ul li {
+  position: absolute;
+  left: 0px;
+  list-style: none;
+  font-family: Poppins;
+  font-weight: 600;
+  color: #7C8192;
+}
+
+.downloadCon .list ul img {
+  position: absolute;
+  right: 50px;
+  cursor: pointer;
+}
+
+.css-table {
+  display: table;
+}
+
+.css-table-header {
+  display: table-header-group;
+  font-weight: bold;
+  background-color: #bfbfbf;
+}
+
+.css-table-body {
+  display: table-row-group;
+}
+
+.css-table-row {
+  display: table-row;
+}
+
+.css-table-header div,
+.css-table-row div {
+  display: table-cell;
+  padding: 0 6px;
+}
+
+.css-table-header div {
+  text-align: center;
+  border: 1px solid white;
+}
+
+.table-responsive {
+  width: 100%;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+table th {
+  background-color: #F7F7F7;
+  color: #333;
+  font-weight: bold;
+}
+
+table th, table td {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.Table {
+  display: table;
+}
+
+.Title {
+  display: table-caption;
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.Heading {
+  display: table-row;
+  font-weight: bold;
+  text-align: center;
+}
+
+.Row {
+  display: table-row;
+}
+
+.Cell {
+  display: table-cell;
+  border: solid;
+  border-width: thin;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.form {
+  position: absolute;
+  height: 640px;
+  width: 100%;
+  top: 55px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.form input {
+  display: block;
+  text-indent: 5%;
+}
+
+.form input:focus {
+  outline: none;
+}
+
+.form input::-webkit-input-placeholder {
+  color: #7C8192;
+}
+
+.form input:-ms-input-placeholder {
+  color: #7C8192;
+}
+
+.form input::-ms-input-placeholder {
+  color: #7C8192;
+}
+
+.form input::placeholder {
+  color: #7C8192;
+}
+
+.form .email {
+  position: absolute;
+  height: 40px;
+  width: 80%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  background-repeat: no-repeat;
+  background-position: right 1em top 50%, 0 0;
+  background-size: 1em auto, 100%;
+}
+
+@media screen and (max-width: 479px) {
+  .form .email {
+    position: absolute;
+    top: 100px;
+    width: 95%;
+  }
+}
+
+.form .submitForm {
+  position: absolute;
+  top: 400px;
+  width: 200px;
+  height: 40px;
+  background: #FF1D58;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.form .submitForm:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+@media screen and (max-width: 479px) {
+  .form .submitForm {
+    position: absolute;
+    top: 450px;
+  }
+}
+/*# sourceMappingURL=download-reports.component.css.map */

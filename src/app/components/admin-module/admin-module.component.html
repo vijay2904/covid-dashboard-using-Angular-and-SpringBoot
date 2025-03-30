@@ -1,0 +1,117 @@
+<div class = 'container'>            
+    <div class = "Headingcontainer">
+        <h1>Admin Module</h1>
+        <div style = "position: absolute;right: 0;width: 50%;display: flex;flex-direction: row;justify-content: space-between;">
+            <button (click) = "AddButtonClicked()"  *ngIf = "!addButtonClicked">Add a place</button>
+            <button (click) = "AddButtonClicked()" *ngIf = "addButtonClicked">Update a place</button>
+            <button (click) = "EpassActivated()">EPass</button>
+        </div>
+    </div>
+    <form [formGroup] = "casesForm" (ngSubmit) = "addCases()" *ngIf = "addButtonClicked">
+        <h2>Welcome back Vijay, hope you are ready with todays reports</h2>
+        <h4 *ngIf = "errorMessageActivated" style="color: red;">{{ errorMessage }}</h4>
+        <select class = "select" required #stateSelectedNow = "ngModel" [class.is-invalid] = "stateSelectedNow.invlaid && stateSelectedNow.touched" name="stateSelectedNow" id="stateSelectedNow" [(ngModel)]="selectedState"
+                    [ngModelOptions]="{standalone: true}" formContrlName = "stateSelectedNow" required>
+                        <option *ngFor = "let state of IndianStates" [value] = "state.state">{{ state.state }}</option>
+        </select>
+        <small *ngIf = "stateSelectedNow.touched && stateSelectedNow.invalid" style="color: red; margin: 0;">Please choose a state</small>
+        
+        <div class = "input-con">District <span>:</span> <input type="text" autoComplete = "place"  [formControlName] = "'place'"></div> 
+        <div class = "input-con">Total Cases <span>:</span> <input type="text" autoComplete = "totalCases"  [formControlName] = "'totalCases'" required></div>
+        <div class = "input-con">Active Cases <span>:</span> <input type = "text" autoComplete = "activeCases"  [formControlName] = "'activeCases'" required></div>
+        <div class = "input-con">Recovered Cases <span>:</span> <input type = "text" autoComplete = "recoveredCases"  [formControlName] = "'recoveredCases'" required></div>
+        <div class = "input-con">Deceased Cases <span>:</span> <input type="text" autoComplete = "deceasedCases"  [formControlName] = "'deceasedCases'" required></div>
+        <div class = "latandlong">
+             Latitude <span>:</span> <input type="text" class = "lat" autoComplete = "latitude"  [formControlName] = "'latitude'" required>
+            Longitude <span>:</span> <input type="text" class = "long" autoComplete = "longitude"  [formControlName] = "'longitude'" aria-required="true"> 
+        </div> 
+        <input type = "submit" value="Add" class = "submitBtn">
+        
+
+        
+
+    </form>
+
+    <!-- <div *ngIf = "!name && !description && !stateSelectedNow; else formInfo">
+        <form [formGroup] = "rForm" (ngSubmit) = "addPost(rForm.value)">
+            <div class="form-container">
+                <div class="row columns">
+                    <h1>My Form</h1>
+                    <select required #stateSelectedNow = "ngModel" [class.is-invalid] = "stateSelectedNow.invlaid && stateSelectedNow.touched" name="stateSelectedNow" id="stateSelectedNow" [(ngModel)]="selectedState"
+                    [ngModelOptions]="{standalone: true}" formContrlName = "stateSelectedNow" required>
+                        <option *ngFor = "let state of IndianStates" [value] = "state.state">{{ state.state }}</option>
+                    </select>
+                    <small *ngIf = "stateSelectedNow.touched && stateSelectedNow.invalid">Please choose a state</small>
+                   
+                    <label>Name
+                        <input type="text" formControlName = "name">
+                    </label>
+                    <div class="alert" *ngIf = "!rForm.controls['name'].valid && rForm.controls['name'].touched">This is required</div>
+
+                     <label>Desription
+                        <input type="text" formControlName = "description">
+                    </label>
+
+                    <input type="submit" class = "submitBtn" value = "Add" [disabled] = "!rForm.valid">
+                </div>
+            </div>
+            
+        </form>
+
+        
+    </div> -->
+    
+
+    <form [formGroup] = "updateCasesForm" (ngSubmit) = "updateCases()" *ngIf = "!addButtonClicked">
+        <h2>Welcome back Vijay, hope you are ready with todays reports</h2>
+        <ng-select  [items] = "states"
+                    [multiple]="false"
+                    placeholder="Select a state" 
+                    class = "search"
+                    [(ngModel)]="selected"
+                    [ngModelOptions]="{standalone: true}"
+                    (change) = "getDistricts()"
+        ></ng-select>
+        <ng-select
+                    [items] = "districts"
+                    bindLabel="name"
+                    bindValue="id"
+                    [multiple]="false"
+                    placeholder="Select a district" class = "search"></ng-select>
+        <div class = "input-con">Total Cases <span>:</span> <input type="text" autoComplete = "totalCases"  [formControlName] = "'totalCases'"></div>
+        <div class = "input-con">Active Cases <span>:</span> <input type = "text" autoComplete = "activeCases"  [formControlName] = "'activeCases'"></div>
+        <div class = "input-con">Recovered Cases <span>:</span> <input type = "text" autoComplete = "recoveredCases"  [formControlName] = "'recoveredCases'"></div>
+        <div class = "input-con">Deceased Cases <span>:</span> <input type="text" autoComplete = "deceasedCases"  [formControlName] = "'deceasedCases'"></div>
+        <!-- <div class = "latandlong">
+            Latitude <span>:</span> <input type="text" class = "lat" autoComplete = "latitude"  [formControlName] = "'latitude'">
+            Longitude <span>:</span> <input type="text" class = "long" autoComplete = "longitude"  [formControlName] = "'longitude'">
+        </div> -->
+        <!-- <input type = "submit" class = "submitBtn" *ngIf = "!addButtonClicked" > -->
+        
+        <input type = "submit" value = "update" class = "submitBtn">
+
+        
+
+    </form>
+
+    <form *ngIf = "EpassActivate" style="display: flex;justify-content: flex-start;">
+        <table border="1" class="table table-striped table-responsive-md ml-4" style="border-radius: 10px;">
+           
+            <tbody style = "height:93.5%;position:absolute;overflow-y: scroll;border-radius: 10px;">
+                <tr *ngFor = "let req of epassRequests">
+                    <td>{{req.refID}}</td>
+                    <td>{{req.ph_no}}</td>
+                     <td>{{req.reason}}</td>
+                     <td>{{req.destination}}</td>
+                     <td><button (click) = "acceptEpassRequest(req.refID)" type = "button" class="submitBtn" style = "background-color:#8BC34A;width: 100px;">Accept</button>
+                        <button (click) = "rejectEpassRequest(req.refID)" type = "button" class="submitBtn" style = "background-color:red;width: 100px;">Reject</button>
+                    </td>
+                     
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+
+

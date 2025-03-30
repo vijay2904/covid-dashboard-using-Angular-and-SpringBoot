@@ -1,0 +1,603 @@
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 80%;
+  height: 100%;
+  left: 10%;
+  margin: 0 4%;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    width: 90%;
+    left: 0;
+    margin: 5% 5%;
+  }
+}
+
+.container .buttons {
+  position: absolute;
+  top: 40px;
+  height: 50px;
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .buttons button {
+  background: #FF1D58;
+  border: none;
+  width: 100px;
+  height: 40px;
+  color: #FFFFFF;
+  font-weight: bold;
+  margin: 0 2%;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.container .buttons button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.container .buttons button:focus {
+  outline: none;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+.container .registerCon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 550px;
+  width: 40%;
+  top: 120px;
+  position: absolute;
+  margin: 0 5%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .container .registerCon {
+    width: 80%;
+  }
+}
+
+.container .registerCon legend {
+  position: absolute;
+  top: 20px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 20px;
+  /* identical to box height, or 56% */
+  text-transform: uppercase;
+  color: #FF1D58;
+}
+
+.container .registerCon .errorMessage {
+  color: Red;
+  position: absolute;
+  top: 10px;
+  font-size: 14px;
+}
+
+.container .registerCon .OTPform {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .registerCon .OTPform .otpCon {
+  background: #fff;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25);
+          box-shadow: rgba(0, 0, 0, 0.25);
+  width: 90%;
+}
+
+.container .registerCon .OTPform .submitOTP {
+  background: #FF1D58;
+  color: #fff;
+  border-radius: 50px;
+  border: none;
+  height: 40px;
+  width: 150px;
+}
+
+.container .registerCon form {
+  position: absolute;
+  height: 80%;
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
+  top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .registerCon form input {
+  display: block;
+  text-indent: 5%;
+}
+
+.container .registerCon form input:focus {
+  outline: none;
+}
+
+.container .registerCon form input::-webkit-input-placeholder {
+  color: #7C8192;
+}
+
+.container .registerCon form input:-ms-input-placeholder {
+  color: #7C8192;
+}
+
+.container .registerCon form input::-ms-input-placeholder {
+  color: #7C8192;
+}
+
+.container .registerCon form input::placeholder {
+  color: #7C8192;
+}
+
+.container .registerCon form .username {
+  position: absolute;
+  top: 40px;
+  height: 40px;
+  width: 80%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  border: none;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 550;
+  font-size: 12px;
+  line-height: 20px;
+  background-image: url(../../../assets/images/user.png);
+  background-repeat: no-repeat;
+  background-position: right 1em top 50%, 0 0;
+  background-size: 1.5em auto, 100%;
+}
+
+.container .registerCon form .email {
+  position: absolute;
+  top: 120px;
+  height: 40px;
+  width: 80%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  border: none;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 550;
+  font-size: 12px;
+  line-height: 20px;
+  background-image: url(../../../assets/images/email1.png);
+  background-repeat: no-repeat;
+  background-position: right 1em top 50%, 0 0;
+  background-size: 1.3em auto, 100%;
+}
+
+.container .registerCon form .pass {
+  position: absolute;
+  top: 200px;
+  height: 40px;
+  width: 80%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  border: none;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 550;
+  font-size: 12px;
+  line-height: 20px;
+  background-image: url(../../../assets/images/password.png);
+  background-repeat: no-repeat;
+  background-position: right 1em top 50%, 0 0;
+  background-size: 1.3em auto, 100%;
+}
+
+.container .registerCon form .cpass {
+  position: absolute;
+  top: 280px;
+  height: 40px;
+  width: 80%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  border: none;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 550;
+  font-size: 12px;
+  line-height: 20px;
+  background-image: url(../../../assets/images/password.png);
+  background-repeat: no-repeat;
+  background-position: right 1em top 50%, 0 0;
+  background-size: 1.3em auto, 100%;
+}
+
+.container .registerCon form .regbtn {
+  position: absolute;
+  top: 400px;
+  background-color: #FF1D58;
+  color: #FFFFFF;
+  font-family: Poppins;
+  font-weight: 600;
+  border: none;
+  height: 40px;
+  width: 150px;
+  border-radius: 50px;
+  -webkit-box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.container .registerCon form .regbtn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.container .registerCon .loginWithGmail {
+  width: 80%;
+  height: 50px;
+  position: absolute;
+  top: 600px;
+  background: #FF1D58;
+  border: none;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: Poppins;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.container .registerCon .loginWithGmail:focus {
+  outline: none;
+}
+
+.container .registerCon .loginWithGmail img {
+  height: 25px;
+  width: 40px;
+  position: absolute;
+  left: 20%;
+}
+
+.container .loginCon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  height: 500px;
+  width: 40%;
+  margin: 0 5%;
+  z-index: 1;
+  top: 120px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .container .loginCon {
+    width: 80%;
+  }
+}
+
+.container .loginCon .forgotForm {
+  position: absolute;
+  height: 80%;
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
+  top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .loginCon .forgotForm input {
+  display: block;
+  text-indent: 5%;
+  width: 80%;
+  height: 40px;
+  border-radius: 10px;
+  background: #fff;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25);
+          box-shadow: rgba(0, 0, 0, 0.25);
+}
+
+.container .loginCon .forgotForm input:focus {
+  outline: none;
+}
+
+.container .loginCon .forgotForm .forgotbtn {
+  cursor: pointer;
+}
+
+.container .loginCon .forgotForm .forgotbtn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.container .loginCon .forgotForm input::-webkit-input-placeholder {
+  color: #7C8192;
+}
+
+.container .loginCon .forgotForm input:-ms-input-placeholder {
+  color: #7C8192;
+}
+
+.container .loginCon .forgotForm input::-ms-input-placeholder {
+  color: #7C8192;
+}
+
+.container .loginCon .forgotForm input::placeholder {
+  color: #7C8192;
+}
+
+.container .loginCon .errorMessage {
+  color: Red;
+  position: absolute;
+  top: 10px;
+  font-size: 14px;
+}
+
+.container .loginCon legend {
+  position: absolute;
+  top: 20px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 20px;
+  /* identical to box height, or 56% */
+  text-transform: uppercase;
+  color: #FF1D58;
+}
+
+.container .loginCon .googleBtn {
+  position: absolute;
+  top: 400px;
+  background: #FF1D58;
+  border-radius: 10px;
+  width: 80%;
+  height: 45px;
+  z-index: 10;
+  color: #fff;
+}
+
+.container .loginCon form {
+  position: absolute;
+  height: 80%;
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
+  top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .loginCon form input {
+  display: block;
+  text-indent: 5%;
+}
+
+.container .loginCon form input:focus {
+  outline: none;
+}
+
+.container .loginCon form input::-webkit-input-placeholder {
+  color: #7C8192;
+}
+
+.container .loginCon form input:-ms-input-placeholder {
+  color: #7C8192;
+}
+
+.container .loginCon form input::-ms-input-placeholder {
+  color: #7C8192;
+}
+
+.container .loginCon form input::placeholder {
+  color: #7C8192;
+}
+
+.container .loginCon form .username1 {
+  position: absolute;
+  top: 20px;
+  height: 40px;
+  width: 80%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  border: none;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 550;
+  font-size: 12px;
+  line-height: 20px;
+  background-image: url(../../../assets/images/user.png);
+  background-repeat: no-repeat;
+  background-position: right 1em top 50%, 0 0;
+  background-size: 1.5em auto, 100%;
+}
+
+.container .loginCon form .pass1 {
+  position: absolute;
+  top: 100px;
+  height: 40px;
+  width: 80%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  border: none;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 550;
+  font-size: 12px;
+  line-height: 20px;
+  background-image: url(../../../assets/images/password.png);
+  background-repeat: no-repeat;
+  background-position: right 1em top 50%, 0 0;
+  background-size: 1.3em auto, 100%;
+}
+
+.container .loginCon form .loginbtn {
+  position: absolute;
+  top: 180px;
+  background-color: #FF1D58;
+  color: #FFFFFF;
+  font-family: Poppins;
+  font-weight: 600;
+  border: none;
+  height: 40px;
+  width: 150px;
+  border-radius: 50px;
+  -webkit-box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.container .loginCon form .loginbtn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.container .loginCon a {
+  position: absolute;
+  top: 290px;
+}
+
+.container .loginCon h3 {
+  font-family: Poppins;
+  font-size: 14px;
+  color: #FF1D58;
+}
+
+.container .loginCon h4 {
+  font-family: Poppins;
+  font-size: 20px;
+  color: #7C8192;
+  position: absolute;
+  top: 320px;
+}
+
+.container .loginCon .loginWithGmail {
+  width: 80%;
+  height: 50px;
+  position: absolute;
+  top: 400px;
+  background: #FF1D58;
+  border: none;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: Poppins;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.container .loginCon .loginWithGmail:focus {
+  outline: none;
+}
+
+.container .loginCon .loginWithGmail img {
+  height: 25px;
+  width: 40px;
+  position: absolute;
+  left: 20%;
+}
+/*# sourceMappingURL=register-and-login.component.css.map */

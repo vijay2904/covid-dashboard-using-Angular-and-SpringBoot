@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,600,800,900");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700");
+@import "~@ng-select/ng-select/themes/material.theme.css";
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fefefe;
+}
+
+* {
+    font-family: Poppins;
+}
+
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+}
+

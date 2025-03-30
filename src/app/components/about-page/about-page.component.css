@@ -1,0 +1,594 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,600,800,900");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700");
+.container {
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  left: 10%;
+  margin: 0 4%;
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 100%;
+    margin: 5% 0;
+    left: 0;
+  }
+}
+
+.Headingcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 80px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 992px) {
+  .Headingcontainer {
+    position: relative;
+    width: 90%;
+    margin: 0 5%;
+  }
+}
+
+.Headingcontainer h1 {
+  position: absolute;
+  left: 0;
+  color: #FF1D58;
+  font-weight: 750;
+  text-transform: uppercase;
+  height: 15px;
+  font-size: 28px;
+}
+
+@media screen and (max-width: 479px) {
+  .Headingcontainer h1 {
+    font-size: 20px;
+  }
+}
+
+.AllCon {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 625px;
+}
+
+@media screen and (max-width: 992px) {
+  .AllCon {
+    width: 90%;
+    margin: 0 5%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 1500px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .AllCon {
+    width: 90%;
+    margin: 0 5%;
+    height: 2000px;
+  }
+}
+
+.AllCon .aboutandsymp {
+  width: 49%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 992px) {
+  .AllCon .aboutandsymp {
+    width: 100%;
+    height: 800px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .AllCon .aboutandsymp {
+    height: 1000px;
+  }
+}
+
+.AllCon .aboutandsymp .AboutCovid {
+  position: relative;
+  width: 100%;
+  height: 39%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 992px) {
+  .AllCon .aboutandsymp .AboutCovid {
+    height: 300px;
+    margin: 2% 0;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .AllCon .aboutandsymp .AboutCovid {
+    height: 500px;
+  }
+}
+
+.AllCon .aboutandsymp .AboutCovid h1 {
+  position: absolute;
+  top: 5px;
+  left: 5%;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  /* identical to box height, or 83% */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  color: #7C8192;
+}
+
+.AllCon .aboutandsymp .AboutCovid p {
+  position: absolute;
+  top: 20px;
+  font-size: 16px;
+  width: 90%;
+  height: 90%;
+  margin: 40px 5%;
+}
+
+@media screen and (max-width: 479px) {
+  .AllCon .aboutandsymp .AboutCovid p {
+    font-size: 14px;
+  }
+}
+
+.AllCon .aboutandsymp .symptomsCon {
+  position: relative;
+  width: 100%;
+  height: 59%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 992px) {
+  .AllCon .aboutandsymp .symptomsCon {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .AllCon .aboutandsymp .symptomsCon {
+    height: 1000px;
+  }
+}
+
+.AllCon .aboutandsymp .symptomsCon h1 {
+  position: absolute;
+  top: 5px;
+  left: 5%;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  /* identical to box height, or 83% */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  color: #7C8192;
+}
+
+.AllCon .aboutandsymp .symptomsCon .leftandright .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 80%;
+  width: 50%;
+  left: -5%;
+  bottom: 10%;
+}
+
+@media screen and (max-width: 479px) {
+  .AllCon .aboutandsymp .symptomsCon .leftandright .left {
+    width: 100%;
+    height: 50%;
+    top: 5%;
+  }
+}
+
+.AllCon .aboutandsymp .symptomsCon .leftandright .left .Symptom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.AllCon .aboutandsymp .symptomsCon .leftandright .left .Symptom img {
+  height: 65px;
+  width: 65px;
+  margin: 20px 0;
+}
+
+.AllCon .aboutandsymp .symptomsCon .leftandright .left .Symptom h2 {
+  position: absolute;
+  right: 0;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  /* or 111% */
+  text-align: center;
+  color: #000000;
+}
+
+.AllCon .aboutandsymp .symptomsCon .leftandright .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 80%;
+  width: 50%;
+  right: -5%;
+  bottom: 10%;
+}
+
+@media screen and (max-width: 479px) {
+  .AllCon .aboutandsymp .symptomsCon .leftandright .right {
+    height: 50%;
+    top: 50%;
+    width: 100%;
+  }
+}
+
+.AllCon .aboutandsymp .symptomsCon .leftandright .right .Symptom1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.AllCon .aboutandsymp .symptomsCon .leftandright .right .Symptom1 img {
+  height: 65px;
+  width: 65px;
+  margin: 20px 0;
+}
+
+.AllCon .aboutandsymp .symptomsCon .leftandright .right .Symptom1 h2 {
+  position: absolute;
+  left: 0;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  /* or 111% */
+  text-align: center;
+  color: #000000;
+}
+
+.AllCon .transandprev {
+  width: 49%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 992px) {
+  .AllCon .transandprev {
+    width: 100%;
+    margin: 2% 0;
+    height: 700px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .AllCon .transandprev {
+    height: 1500px;
+  }
+}
+
+.AllCon .transandprev .transmissionCon {
+  position: relative;
+  width: 100%;
+  height: 49%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 992px) {
+  .AllCon .transandprev .transmissionCon {
+    height: 300px;
+    margin: 2% 0;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .AllCon .transandprev .transmissionCon {
+    height: 600px;
+  }
+}
+
+.AllCon .transandprev .transmissionCon h1 {
+  position: absolute;
+  top: 5px;
+  left: 5%;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  /* identical to box height, or 83% */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  color: #7C8192;
+}
+
+.AllCon .transandprev .transmissionCon .transmit {
+  position: absolute;
+  top: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 90%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (max-width: 479px) {
+  .AllCon .transandprev .transmissionCon .transmit {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.AllCon .transandprev .transmissionCon .transmit .transmission {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.AllCon .transandprev .transmissionCon .transmit .transmission img {
+  height: 70px;
+  width: 70px;
+}
+
+.AllCon .transandprev .transmissionCon .transmit .transmission h2 {
+  font-size: 14px;
+}
+
+.AllCon .transandprev .preventionCon {
+  position: relative;
+  width: 100%;
+  height: 49%;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 992px) {
+  .AllCon .transandprev .preventionCon {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .AllCon .transandprev .preventionCon {
+    height: 600px;
+  }
+}
+
+.AllCon .transandprev .preventionCon h1 {
+  position: absolute;
+  top: 5px;
+  left: 5%;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  /* identical to box height, or 83% */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  color: #7C8192;
+}
+
+.AllCon .transandprev .preventionCon .transmit {
+  position: absolute;
+  top: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 90%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (max-width: 479px) {
+  .AllCon .transandprev .preventionCon .transmit {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.AllCon .transandprev .preventionCon .transmit .transmission {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.AllCon .transandprev .preventionCon .transmit .transmission img {
+  height: 70px;
+  width: 70px;
+}
+
+.AllCon .transandprev .preventionCon .transmit .transmission h2 {
+  font-size: 14px;
+}
+/*# sourceMappingURL=about-page.component.css.map */

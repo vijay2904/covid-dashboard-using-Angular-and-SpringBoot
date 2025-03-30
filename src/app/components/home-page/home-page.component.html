@@ -1,0 +1,240 @@
+<div class = "container">
+    <div class = "Headingcontainer">
+        <h1>dashboard</h1>
+        <h4 class = "Message" *ngIf = "!isUserLogged">Register/Login to download, schedule and email reports</h4>
+        <h5 *ngIf(errormessage)>{{errormessage}}</h5>
+        <!--<button (click) = "getWelcomeMessage()">button</button> -->
+    </div>
+    <div class = "casesCon">
+        <legend>{{state_title}} COVID-19 cases</legend>
+        <div class = "cases">
+            <div class = "case">
+                <h4>Total</h4>
+                <h3>{{total}}</h3>
+            </div>
+            <div class = "case">
+                <h4>Active</h4>
+                <h3>{{active}}</h3>
+            </div>
+            <div class = "case">
+                <h4>Recovered</h4>
+                <h3>{{recovered}}</h3>
+            </div>
+            <div class = "case">
+                <h4>Deceased</h4>
+                <h3>{{deaths}}</h3>
+            </div>
+        </div>
+    </div>
+    <div class = "chartandmapCon">
+        <h4 *ngIf = "stateMessageActivated" class = "stateMessage">{{stateMessage}}</h4>
+        <form class = "form" (ngSubmit) = "getHighlyEffectedByState()">
+             <ng-select  [items] = "states"
+                    [multiple]="false"
+                    placeholder="Select a state"
+                    class = "search"
+                    [(ngModel)]="selected"
+                    [ngModelOptions]="{standalone: true}"
+             ></ng-select>
+
+
+            <button>Search</button>
+        </form>
+        <div class = "contain">
+            <div class = "map" id = "map">
+
+            </div>
+            <div class = "chartandcountCon">
+                <div class = "chartCon">
+                    <ngx-skeleton-loader
+                        count="5"
+                        [theme]="{ 'border-radius': '10px', height: '650px'}"
+                    ></ngx-skeleton-loader>
+                    <ng-select  [items] = "chartTypes"
+                    [multiple]="false"
+                    [(ngModel)]="selectedChart"
+                    placeholder="Type of chart" (change) = "getChanged()" class = "dropdown"></ng-select>
+                    <!-- <div class = "share">
+                        <h3>share &nbsp;&nbsp;:</h3>
+                        <a href="https://www.facebook.com/sharer.php?..." target="blank" rel="noopener noreferrer"><svg width="20" height="20" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.6172 13.5L18.5948 9.15656H12.4823V6.33797C12.4823 5.14969 13.3361 3.99141 16.0738 3.99141H18.8526V0.293438C18.8526 0.293438 16.3309 0 13.9198 0C8.88594 0 5.59557 2.08031 5.59557 5.84625V9.15656H0V13.5H5.59557V24H12.4823V13.5H17.6172Z" fill="black"/>
+                        </svg></a>
+
+                        <svg width="20" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19.7386 4.85784C19.7525 5.07103 19.7525 5.28427 19.7525 5.49745C19.7525 12 15.2157 19.4924 6.92386 19.4924C4.36928 19.4924 1.9962 18.6852 0 17.2843C0.362957 17.3299 0.711906 17.3452 1.08883 17.3452C3.19666 17.3452 5.13704 16.5685 6.68654 15.2437C4.7043 15.198 3.04313 13.7817 2.47079 11.8325C2.75 11.8781 3.02917 11.9086 3.32234 11.9086C3.72715 11.9086 4.132 11.8477 4.50888 11.7411C2.4429 11.2842 0.893363 9.30455 0.893363 6.91369V6.8528C1.49359 7.21828 2.19162 7.4467 2.93141 7.47712C1.71695 6.59386 0.921293 5.08627 0.921293 3.38067C0.921293 2.46698 1.1446 1.62942 1.53549 0.898453C3.75504 3.88322 7.09135 5.83242 10.8324 6.04566C10.7626 5.68017 10.7207 5.2995 10.7207 4.91878C10.7207 2.20809 12.7309 0 15.2296 0C16.5278 0 17.7004 0.593906 18.524 1.5533C19.543 1.34011 20.5202 0.928922 21.3857 0.365484C21.0506 1.50764 20.3387 2.46703 19.4035 3.07613C20.3109 2.96958 21.1903 2.69541 21.9999 2.31473C21.3858 3.28931 20.618 4.1573 19.7386 4.85784V4.85784Z" fill="black"/>
+                        </svg>
+                    </div> -->
+                    <div class = "chart">
+                        <!-- <canvas baseChart class = "lineChartCon"
+                        [datasets]="lineChartData"
+                        [labels]="lineChartLabels"
+                        [colors]="lineChartColors"
+                        [legend]="lineChartLegend"
+                        [chartType]="lineChartType">
+                    </canvas>-->
+                        <canvas *ngIf = "barChartActivated"
+                            baseChart
+                            [datasets]="barChartData"
+                            [labels]="barChartLabels"
+                            [options]="barChartOptions"
+                            [plugins]="barChartPlugins"
+                            [legend]="barChartLegend"
+                            [chartType]="barChartType"
+                            [colors] = "barChartColors"
+                            >
+                        </canvas>
+                        <canvas *ngIf = "pieChartActivated"
+                            baseChart
+                            [data]="pieChartData"
+                            [labels]="pieChartLabels"
+                            [chartType]="pieChartType"
+                            [options]="pieChartOptions"
+                            [plugins]="pieChartPlugins"
+                            [colors]="pieChartColors"
+                            [legend]="pieChartLegend">
+                        </canvas>
+
+                    </div>
+                </div>
+                <div class = "bottomCon">
+                    <div class = "HighlyAffected">
+                        <h1>Highly Affected</h1>
+                        <div class = "HighCount" *ngIf = "statesActivated">
+                            <div class = "count" *ngFor = "let stateandactive of highlyEffected">
+                                <h3 class = "h3">{{stateandactive.state}}</h3>
+                                <h3 class = "countNum"><span>{{stateandactive.activeCases}}</span></h3>
+                            </div>
+                        </div>
+                        <div class = "HighCount" *ngIf = "!statesActivated">
+                            <div class = "count" *ngFor = "let stateandactive of highlyEffected">
+                                <h3 class = "h3">{{stateandactive.state}}</h3>
+                                <h3 class = "countNum"><span>{{stateandactive.activeCases}}</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "RecoveryRate">
+                        <h1>Recovery Rate</h1>
+                        <div class = "donut"><canvas baseChart
+                            [data]="doughnutChartData"
+                            [labels]="doughnutChartLabels"
+                            [chartType]="doughnutChartType"
+                            [legend]="doughnutChartLegend"
+                            [options]="doughnutChartOptions"
+                            [colors]="[{backgroundColor: ['#38C976', 'rgba(0,0,0,0)']}]"
+                        >
+
+                          </canvas><span>{{recoveryRate}}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "travel">
+
+        <legend>Travel pass</legend>
+
+        <div style=" width: 100%;height: 50px; margin-top: 50px; display: flex; flex-direction: row;flex-wrap: wrap;justify-content: space-evenly; align-items: center;">
+            <button class = "button" (click) = "ActivateApply()" *ngIf = "!ApplyActivated">Apply</button>
+            <button class = "button" (click) = "ActivateCheckStatus()" style="width:200px" *ngIf = "ApplyActivated">Check Status</button>
+        </div>
+
+
+        <h4 *ngIf = "travelErrorActivated" class = "travelError">{{travelError}}</h4>
+
+        <form [formGroup] = "travelForm" (ngSubmit) = "ApplyForPass()" *ngIf = "ApplyActivated">
+            <!-- <select required [(ngModel)]="selectSource"
+        [ngModelOptions]="{standalone: true}" formContrlName = "selectSource" required class = "source">
+                <option *ngFor = "let place of places" [value] = "place">{{ place }}</option>
+            </select>
+            <select required [(ngModel)]="selectDestination"
+        [ngModelOptions]="{standalone: true}" formContrlName = "selectDestination" required class = "destination">
+        <option *ngFor = "let place of places" [value] = "place">{{ place }}</option>
+            </select> -->
+            <!-- <ng-select  [items] = "places"
+                    [multiple]="false"
+                    placeholder="From"
+
+                    [(ngModel)]="selected"
+                    [ngModelOptions]="{standalone: true}"
+             ></ng-select> -->
+            <ng-select  [items] = "places"
+                    [multiple]="false"
+                    placeholder="To"
+                    [(ngModel)]="destination"
+                    [ngModelOptions]="{standalone: true}"
+             ></ng-select>
+            <input type="text" name="" id="" placeholder="Full Name" [formControlName] = "'name'">
+            <input type="tel" placeholder="Phone number" [formControlName] = "'phone'">
+            <input type="text" placeholder="Adhaar number" [formControlName] = "'adhaar'">
+            <input type="email" name="" id="" placeholder="Email id" [formControlName] = "'email'">
+            <input type="date" name="" id=""  [formControlName] = "'date'">
+            <textarea name="" id="" cols="30" rows="6" placeholder="Reason for travelling" [formControlName] = "'reason'"></textarea>
+
+            <input type = "submit" value="Apply" class = "button">
+        </form>
+
+        <form [formGroup] = "StatusForm" (ngSubmit) = "checkStatus()" *ngIf = "CheckStatusActivated">
+            <input type="text" name="" id="" placeholder = "Enter Reference ID" [formControlName] = "'refID'">
+            <input type="submit" value="Check Status" class = "button" style="width: 200px;">
+        </form>
+
+        <div id='card' class="animated fadeIn" *ngIf = "showSuccess">
+            <div id='upper-side'>
+                <!-- <svg version="1.1" id="checkmark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve">
+                  <path d="M131.583,92.152l-0.026-0.041c-0.713-1.118-2.197-1.447-3.316-0.734l-31.782,20.257l-4.74-12.65
+              c-0.483-1.29-1.882-1.958-3.124-1.493l-0.045,0.017c-1.242,0.465-1.857,1.888-1.374,3.178l5.763,15.382
+              c0.131,0.351,0.334,0.65,0.579,0.898c0.028,0.029,0.06,0.052,0.089,0.08c0.08,0.073,0.159,0.147,0.246,0.209
+              c0.071,0.051,0.147,0.091,0.222,0.133c0.058,0.033,0.115,0.069,0.175,0.097c0.081,0.037,0.165,0.063,0.249,0.091
+              c0.065,0.022,0.128,0.047,0.195,0.063c0.079,0.019,0.159,0.026,0.239,0.037c0.074,0.01,0.147,0.024,0.221,0.027
+              c0.097,0.004,0.194-0.006,0.292-0.014c0.055-0.005,0.109-0.003,0.163-0.012c0.323-0.048,0.641-0.16,0.933-0.346l34.305-21.865
+              C131.967,94.755,132.296,93.271,131.583,92.152z" />
+                  <circle fill="none" stroke="#ffffff" stroke-width="5" stroke-miterlimit="10" cx="109.486" cy="104.353" r="32.53" />
+                </svg> -->
+                <h3 id='status'>
+                Applied
+              </h3>
+            </div>
+            <div id='lower-side'>
+              <p id='message'>
+                Your e-pass has been applied with
+                <br>
+                Reference ID : {{referenceID}}
+                <br>
+                <span style="color:#757575;">NOTE: Make a note of the ID to check the status</span>
+
+              </p>
+              <button id="contBtn" (click) = "ActivateApply()">OK</button>
+              <!-- <button id = "contBtn">Download</button> -->
+            </div>
+          </div>
+          <div id='card' class="animated fadeIn" *ngIf = "checkStatusActivated">
+            <div id='upper-side' [ngStyle]= "{'background-color':chosenColor}">
+                <!-- <svg version="1.1" id="checkmark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" xml:space="preserve">
+                  <path d="M131.583,92.152l-0.026-0.041c-0.713-1.118-2.197-1.447-3.316-0.734l-31.782,20.257l-4.74-12.65
+              c-0.483-1.29-1.882-1.958-3.124-1.493l-0.045,0.017c-1.242,0.465-1.857,1.888-1.374,3.178l5.763,15.382
+              c0.131,0.351,0.334,0.65,0.579,0.898c0.028,0.029,0.06,0.052,0.089,0.08c0.08,0.073,0.159,0.147,0.246,0.209
+              c0.071,0.051,0.147,0.091,0.222,0.133c0.058,0.033,0.115,0.069,0.175,0.097c0.081,0.037,0.165,0.063,0.249,0.091
+              c0.065,0.022,0.128,0.047,0.195,0.063c0.079,0.019,0.159,0.026,0.239,0.037c0.074,0.01,0.147,0.024,0.221,0.027
+              c0.097,0.004,0.194-0.006,0.292-0.014c0.055-0.005,0.109-0.003,0.163-0.012c0.323-0.048,0.641-0.16,0.933-0.346l34.305-21.865
+              C131.967,94.755,132.296,93.271,131.583,92.152z" />
+                  <circle fill="none" stroke="#ffffff" stroke-width="5" stroke-miterlimit="10" cx="109.486" cy="104.353" r="32.53" />
+                </svg> -->
+                <h3 id='status'>
+                {{passCondition}}
+              </h3>
+            </div>
+            <div id='lower-side'>
+              <p id='message'>
+                Your e-pass with
+                <br>
+                Reference ID : {{referenceID}}
+                <br>
+                {{passStatus}}
+
+              </p>
+              <button id="contBtn" (click) = "ActivateApply()">OK</button>
+              <!-- <button id = "contBtn">Download</button> -->
+            </div>
+          </div>
+    </div>
+</div>

@@ -1,0 +1,153 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CovidDashboard</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="./assets/images/Group.png">
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/css/foundation.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class = "container1">
+    
+    <div class = "Headingcontainer">
+        <h1>Download Report</h1>
+        
+    </div>
+    <form class = "downloadCon" [formGroup] = "downloadsForm" *ngIf = "!mailFormActivated">
+        <h3 *ngIf = "downloadErrorActivated" class="downloadError">{{downloadError}}</h3>
+        <label class = "stateLabel" *ngIf = "!activatedPDF">Select a state</label>
+        <!-- <select required name="stateSelectedNow" [(ngModel)]="selectedState"
+        [ngModelOptions]="{standalone: true}" formContrlName = "selectedState" required class = "dropdown">
+            <option *ngFor = "let state of IndianStates" [value] = "state.state">{{ state.state }}</option>
+        </select> -->
+        <ng-select *ngIf = "!activatedPDF" 
+        [items] = "states"
+                    [multiple]="false"
+                    placeholder="Select a state" 
+                    class = "dropdown"
+                    [(ngModel)]="selected"
+                    [ngModelOptions]="{standalone: true}"
+        ></ng-select>
+        <!-- <label class = "typeLabel">Select type of file</label>
+        <select required name="stateSelectedNow" id="stateSelectedNow" [(ngModel)]="selectedType"
+        [ngModelOptions]="{standalone: true}" formContrlName = "selectedType" required class = "dropdown2">
+            <option *ngFor = "let option of downloadOptions" [value] = "option.option">{{ option.option }}</option>
+        </select> -->
+
+        
+
+
+        <div class="container" style=" visibility: hidden;width: 100%;z-index: -1" id = "pdfDownloadFormat">
+            
+            <div class="table-responsive">
+            <table class="table" id = "excel-table">
+              <thead>
+                <tr>
+                  <th><b>number</b></th>
+                  <th><b>State</b></th>
+                  <th><b>District</b></th>
+                  <th><b>Total Cases</b></th>
+                  <th><b>Active Cases</b></th>
+                  <th><b>Recovered Cases</b></th>
+                  <th><b>Deceased Cases</b></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor  = "let district of cases; let i = index;">
+                  <td>{{i + 1}}</td>
+                  <td>{{district.state}}</td>
+                  <td>{{district.place}}</td>
+                  <td>{{district.totalCases}}</td>
+                  <td>{{district.activeCases}}</td>
+                  <td>{{district.recoveredCases}}</td>
+                  <td>{{district.deceasedCases}}</td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+            </div>
+
+            <button (click) = "downloadPDF()" class="submitBtn" *ngIf = "!activatedPDF">Submit</button> 
+    <div class = "buttonsCon" *ngIf = "activatedPDF">
+        
+        <!--<input type="submit" value="Download" class = "submitBtn"> -->
+        <button (click) = "activateMailForm()" class="submitBtn3" *ngIf = "activatedPDF">Email report</button> 
+        <button (click) = "afterComplete()" class="submitBtn5" *ngIf = "activatedPDF">Download PDF</button>
+        <button (click) = "afterCompletecsv()" class="submitBtn1" *ngIf = "activatedPDF">Download csv</button>
+        <button (click) = "downloadJSON()" class="submitBtn2" *ngIf = "activatedPDF">Download json</button>
+    </div>
+
+
+
+    
+    <!-- <ul class = "list">
+            <ul>
+                <li>Andhra Pradesh</li>
+                <img src="../../../assets/images/pdf.png" alt=""/>
+            </ul>
+            <ul>
+                <li>Arunachal Pradesh</li>
+                <img src="../../../assets/images/pdf.png" alt=""/>
+            </ul>
+            <ul>
+                <li>Arunachal Pradesh</li>
+                <img src="../../../assets/images/pdf.png" alt=""/>
+            </ul>
+            <ul>
+                <li>Arunachal Pradesh</li>
+                <img src="../../../assets/images/pdf.png" alt=""/>
+            </ul>
+            <ul>
+                <li>Arunachal Pradesh</li>
+                <img src="../../../assets/images/pdf.png" alt=""/>
+            </ul>
+            <ul>
+                <li>Arunachal Pradesh</li>
+                <img src="../../../assets/images/pdf.png" alt=""/>
+            </ul>
+
+            <ul>
+                <li>Arunachal Pradesh</li>
+                <img src="../../../assets/images/pdf.png" alt=""/>
+            </ul>
+            <ul>
+                <li>Arunachal Pradesh</li>
+                <img src="../../../assets/images/pdf.png" alt=""/>
+            </ul>
+            <ul>
+                <li>Arunachal Pradesh</li>
+                <img src="../../../assets/images/pdf.png" alt=""/>
+            </ul>
+            <ul>
+                <li>Arunachal Pradesh</li>
+                <img src="../../../assets/images/pdf.png" alt=""/>
+            </ul>
+            <ul>
+                <li>Arunachal Pradesh</li>
+                <img src="../../../assets/images/pdf.png" alt=""/>
+            </ul>
+            <ul>
+                <li>Arunachal Pradesh</li>
+                <img src="../../../assets/images/pdf.png" alt=""/>
+            </ul>
+        </ul> -->
+    </form>
+    <form [formGroup] = "emailForm" (submit) = "sendEmail()" *ngIf = "mailFormActivated" class = "form">
+        <h4 *ngIf = "errorActivated" style="color: red;font-weight: 500;">{{errorMessage}}</h4>
+        <h4 class = "success" *ngIf = "successActivated" style="color: green;font-weight: 600;">Message Sent</h4>
+        <input type="email" placeholder = "Enter receiver email" class = "email" required [(ngModel)] = "enteredEmail" formControlName = "enteredEmail" />
+        <input type="submit" class = "submitForm"/> 
+        <br>
+        <br>
+    </form>
+</div>
+</body>
+
